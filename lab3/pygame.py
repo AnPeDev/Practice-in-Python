@@ -1,3 +1,1 @@
-print('Github')
-
-print('Heloo github')
+print('Helo github')
