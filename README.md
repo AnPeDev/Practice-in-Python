@@ -1,3 +1,1 @@
-# infa_2021_pervyi
-
-it's test project
+# Practice in Python 2021
