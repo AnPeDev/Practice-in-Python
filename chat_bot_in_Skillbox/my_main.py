@@ -1,6 +1,6 @@
-import random
-import nltk
+# import random
 
+# Намерения (Поздороваться или попрощаться)
 BOT_CONFIG = {
     'intents': {
         'hello': {
@@ -27,28 +27,18 @@ BOT_CONFIG = {
     }
 }
 
-
-def clean(text):
-    return ''.join([simbol for simbol in text.lower() if simbol in 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя '])
-
-
-def match(example, text):
-    return nltk.edit_distance(clean(text), clean(example)) / len(example) < 0.4
+# Перебрать библиотеку BOT_CONFIG:
 
 
 def get_intent(text):
     for intent, value in BOT_CONFIG['intents'].items():
+        print(intent)
         for example in value['examples']:
-            if match(example, text):
-                return random.choice(value['responses'])
-    return 'Я ничего не понял'
+            print(example)
+        print('-----------')
+        for response in value['responses']:
+            print(response)
+        print('-----------')
 
 
-question = input('Поздаровайтесь и начните общение: \n')
-answer = get_intent(question)
-print(answer)
-
-while question != 'выход':
-    question = input()
-    answer = get_intent(question)
-    print(answer)
+get_intent('')
